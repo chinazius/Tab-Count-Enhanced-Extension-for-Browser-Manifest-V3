@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title id="title">TabCount Options</title>
+    <style>
+     body { padding: 10px; font-family: Helvetica, Arial, sans-serif; }
+     body.dark { background-color: #222; color: #eee; }
+     select { margin-bottom: 10px; }
+    </style>
+  </head>
+
+  <body>
+    <h3><span id="lbl_appearance">Appearance & Language</span></h3>
+    <label><span id="lbl_language">Language:</span> 
+      <select id="languageSelect">
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+      </select>
+    </label><br>
+    <label><span id="lbl_theme">Theme:</span> 
+      <select id="themeSelect">
+        <option value="light" id="lbl_theme_light">Light</option>
+        <option value="dark" id="lbl_theme_dark">Dark</option>
+      </select>
+    </label><br>
+    <hr>
+
+    <h3 id="lbl_popupWindow">Popup window</h3>
+    <form name="popupOptionsForm">
+      <label><input type="radio" id ="defaultPopupSelection" name="tabCountRadios" value="currentWindow"><span id="lbl_listCurrent">List tabs from the current window only</span><br></label>
+      <label><input type="radio" name="tabCountRadios" value="allWindows"><span id="lbl_listAll">List tabs from all windows</span><br></label>
+    </form>
+    <label><input type="checkbox" id="tabDedupe" name="tabDedupe" value="dedupe"><span id="lbl_detectDedupe">Detect and prompt duplicate tab creation.</span><br></label>
+    <label><input type="checkbox" id="tabJanitor" name="tabJanitor" value="tabJanitor"/><span id="lbl_autoClose1">Auto-close tabs unused for more than</span> 
+      <input type="number" id="tabJanitorDays" name="tabJanitorDays" value="5" min="1" max="30"/> <span id="lbl_autoClose2">days.</span></label><br>
+    <div id="status"></div>
+    <br>
+    <hr>
+    <h3 id="lbl_currentStats">Current Stats</h3>
+    <span id="lbl_totalWindows">Total number of windows:</span> <span id="windowsCount"></span> <br>
+    <span id="lbl_totalTabs">Total number of tabs:</span> <span id="tabsCount"></span> <br>
+    
+    <input type="button" id="refreshButton" value="Refresh Stats">
+  </body>
+
+  <script src="js/options.js"></script>
+
+</html>
